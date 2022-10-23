@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from '@emotion/styled'
+import Terminal from "./components/terminal"
+
+const Container = styled.div({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "50px 100px",
+    width: "100%",
+    float: "left",
+    gap: "2rem",
+});
+const Name = styled.h1({
+    fontFamily: "Helvetica Neue"
+});
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Container>
+            <Name>Aaron Knudtson</Name>
+            <Terminal />
+        </Container> 
+    );
 }
 
 export default App;
