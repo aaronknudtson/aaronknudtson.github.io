@@ -22,10 +22,12 @@ const Term = styled.div({
 const Name = styled.h1({
     fontFamily: "Helvetica Neue"
 });
-const P = styled.p({
-    margin: "0",
-    paddingLeft: "5em",
-    textIndent: "-5em"
+const H = styled.p({
+    margin: "0"
+})
+const P = styled(H)({
+    paddingLeft: "2em",
+    textIndent: "-2em"
 });
 
 function App() {
@@ -52,9 +54,26 @@ function App() {
     const commands = {
         help: <Help />,
         theme: (theme: string) => changeTheme(theme),
-        experience: (theme: string) => changeTheme(theme),
-        projects: (theme: string) => changeTheme(theme),
-        education: (theme: string) => changeTheme(theme),
+        experience: <div>
+            <P>- Head of engineering at startup RillaFi: 1 year. Lead of Product Development, involves full stack.</P>
+            <P>- Freelance Full Stack Developer: 6 months.</P>
+            <P>- Graduate Research Assistant: 2.5 years. Ran simulations in Fortran and Matlab.</P>
+            <br/>
+            <P>See my resume for more details!</P>
+        </div>,
+        projects: <div>
+            <P><b>asciifire</b> - A rust package (see on <a target="_blank" rel="noreferrer" href="https://github.com/aaronknudtson">crates.io</a>) that converts images into ascii text.</P>
+            <P><b>LumberJacked</b> - A WIP website to log workouts and track progress. <a target="_blank" rel="noreferrer" href="https://github.com/aaronknudtson/LumberJacked">github</a></P>
+            <br/>
+            <P>See more on my <a target="_blank" rel="noreferrer" href="https://github.com/aaronknudtson">github</a></P>
+        </div>,
+        education: <div>
+            <P>- Bachelor's in Mechanical Engineering from North Dakota State University (2019)</P>
+            <P>- Master's degree in Mechanical Engineering from the University of Florida (2021)</P>
+            <P>I have since received instruction and certification in various courses on Udemy, and try to engage in a new class every month at least.</P>
+            <br/>
+            <P>See my resume for more details!</P>
+        </div>,
     };
 
     const customThemes = {
@@ -71,7 +90,7 @@ function App() {
             <TerminalContextProvider>
                 <Term>
                     <ReactTerminal
-                        welcomeMessage={<P>Welcome to my homepage. This is very much a work in progress. Try entering "help" to learn more, or visit <a href="https://github.com/aaronknudtson/aaronknudtson.github.io">here</a> to view progress.</P>}
+                        welcomeMessage={<H>Welcome to my homepage. This is very much a work in progress. Try entering "help" to learn more, or visit <a href="https://github.com/aaronknudtson/aaronknudtson.github.io">here</a> to view progress.</H>}
                         theme={theme}
                         prompt=">>"
                         themes={customThemes}
