@@ -71,7 +71,7 @@ function App() {
             <TerminalContextProvider>
                 <Term>
                     <ReactTerminal
-                        welcomeMessage={<P>Welcome to my homepage. Try entering "help" to learn more.</P>}
+                        welcomeMessage={<P>Welcome to my homepage. This is very much a work in progress. Try entering "help" to learn more, or visit <a href="https://github.com/aaronknudtson/aaronknudtson.github.io">here</a> to view progress.</P>}
                         theme={theme}
                         prompt=">>"
                         themes={customThemes}
